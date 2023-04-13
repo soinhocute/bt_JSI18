@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: black;
+            background-image: url(./Capture.PNG);
+        }
+        p {
+            color: greenyellow;
+            font-family: cursive;
+        }
+        h2 {
+            color: red;
+        }
+        #a {
+            top: 185px;
+            position: relative;
+            left: 290px;
+            font-size: 30px;
+        }
+        #b {
+            position: relative;
+            top: 36px;
+            left: 1110px;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <p>tổng số ca mắc covid-19: </p>
+        <h2 id="dinhcovid"></h2>
+    </div>
+    <div id="b">
+        <p>tổng số người chết: </p>
+        <h2 id="death"></h2>
+    </div>
+
+    <script>
+        var so_ng_din = document.getElementById("dinhcovid")
+        var so_ng_cht = document.getElementById("death")
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'd420389100msh34b9bc86d91eea9p1fcdf6jsn1d42758e0c8a',
+                'X-RapidAPI-Host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
+            }
+        };
+
+        fetch('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?', options)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                so_ng_din.innerHTML=data.data.confirmed
+                so_ng_cht.innerHTML=data.data.deaths
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+</html>
