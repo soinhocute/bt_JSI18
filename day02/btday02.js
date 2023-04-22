@@ -59,6 +59,6 @@ console.log(playersModified)
   }, {});
   
   console.log(obj); // { 1: { name: "Alice" }, 2: { name: "Bob" }, 3: { name: "Charlie" } }
-
+// arr.reduce(callback[, initialValue]) : arr: Mảng được áp dụng hàm reduce, callback là một hàm được gọi cho mỗi phần tử trong mảng, và có thể có các tham số như sau: accumulator, currentValue, currentIndex, array, initialValue là giá trị khởi tạo cho accumulator. Nó là tùy chọn và nếu không được cung cấp, giá trị đầu tiên trong mảng sẽ được sử dụng thay thế.
 //string.split(separator, limit) : dùng để tách chuỗi , separator quy định kí tự phân cách , limit quy định số lần tách
 // array.slice(start, end) : dùng để lấy phần tử bằng chỉ số, start: vị trí bắt đầu, end: vị trí kết thúc, lúc in ra sẽ đc phần tử từ vị trí start đến trc vị trí end(ko bao gồm end), nếu start là âm thì bắt đầu từ cuối mảng
